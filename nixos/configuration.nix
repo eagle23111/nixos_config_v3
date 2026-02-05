@@ -38,6 +38,10 @@
     };
   };
 
+  boot.extraModprobeConfig = ''
+    options hid_apple fnmode=0
+  '';
+
   nix = let
     flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
   in {
@@ -76,11 +80,11 @@
   users.users = {
     mortal = {
       isNormalUser = true;
-      extraGroups = ["wheel"];
+      extraGroups = ["wheel" "gamemode"];
     };
   };
   users.defaultUserShell = pkgs.zsh;
-
+  programs.zsh.enable = true;
 
   services.openssh = {
     enable = true;

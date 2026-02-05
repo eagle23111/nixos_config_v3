@@ -42,12 +42,12 @@
     #protonup-qt 
     gamemode 
     gamescope
-    lutris 
     prismlauncher
     inputs.zen-browser.packages.${system}.default
     wineWowPackages.stable
     winetricks
     vscode
+    kitty
 
     tor
     tor-browser
@@ -63,9 +63,23 @@
 
     hydrus
   ];
+  programs.lutris = {
+    enable = true;
+  };
 
   programs.home-manager.enable = true;
-  programs.git.enable = true;
+  programs.git = {
+    enable = true;
+    lfs.enable = true; # for huggingface models
+    settings = {
+      user = {
+        name = "eagle23111";
+        email = "stasapohta@yandex.ru";
+      };
+
+    };
+  };
+
 
   systemd.user.startServices = "sd-switch";
 
