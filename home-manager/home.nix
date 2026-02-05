@@ -10,6 +10,7 @@
     # inputs.nix-colors.homeManagerModules.default
 
     inputs.self.homeManagerModules.zsh
+    inputs.self.niriDotfiles.homeManagerModule
   ];
 
   nixpkgs = {

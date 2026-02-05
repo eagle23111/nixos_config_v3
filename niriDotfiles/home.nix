@@ -3,6 +3,6 @@
 {
   imports = [
     ./homeModules/dms.nix
-    ./homemodules/niri.nix
+    ./homeModules/niri.nix
   ];
 }
