@@ -10,7 +10,8 @@
     inputs.self.nixosModules.nix-ld
     inputs.self.nixosModules.nvidia
     inputs.self.nixosModules.qemu
-    inputs.self.niriDotfiles.nixosModule
+    inputs.self.nixosModules.gaming
+    #inputs.self.niriDotfiles.nixosModule
 
     inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.common-ssd

@@ -10,7 +10,7 @@
     # inputs.nix-colors.homeManagerModules.default
 
     inputs.self.homeManagerModules.zsh
-    inputs.self.niriDotfiles.homeManagerModule
+    #inputs.self.niriDotfiles.homeManagerModule
   ];
 
   nixpkgs = {
@@ -62,7 +62,7 @@
     #lmstudio
     inputs.nvchad4nix.packages.${system}.default
 
-    hydrus
+    unstable.hydrus
   ];
   programs.lutris = {
     enable = true;

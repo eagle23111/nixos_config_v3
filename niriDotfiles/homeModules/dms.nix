@@ -11,20 +11,29 @@
     # Core features
     # niri integration
     niri = {
-      enableSpawn = false;   # DMS will start niri automatically
-      enableKeybinds = false;  # Prefer config includes (more flexible)
+      enableSpawn = true;   
+      #enableClipboard = true;
+      enableKeybinds = false;  
       includes = {
         enable = true;
         override = true;
         originalFileName = "hm";
-        filesToInclude = [ "binds" "layout" "outputs" ];
+            filesToInclude = [         # Files under `$XDG_CONFIG_HOME/niri/dms` to be included into the new config
+      "alttab"                 # Please note that niri will throw an error if any of these files are missing.
+      "binds"
+      "colors"
+      "layout"
+      "outputs"
+      "wpblur"
+      "cursor"
+    ];
       };
     };
+    
 
     settings = {
       theme = "dark";
       dynamicTheming = true;
     };
   };
-
 }
