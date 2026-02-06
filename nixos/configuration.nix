@@ -11,7 +11,7 @@
     inputs.self.nixosModules.nvidia
     inputs.self.nixosModules.qemu
     inputs.self.nixosModules.gaming
-    #inputs.self.niriDotfiles.nixosModule
+    inputs.self.nixosModules.bypassCen
 
     inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.common-ssd
@@ -58,9 +58,12 @@
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
   };
   # TODO: set a proper desktop shell
-  services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
-  
+  services.displayManager.gdm.enable = true;
+  environment.systemPackages = [
+    pkgs.vanilla-dmz
+  ];
+
   # TODO: probably move it somewhere else
   fonts.packages = with pkgs; [ nerd-fonts.terminess-ttf ];
 

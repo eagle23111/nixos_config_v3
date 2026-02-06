@@ -19,15 +19,6 @@
     nvchad4nix.url = "github:nix-community/nix4nvchad";
     nvchad4nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    dms = {
-      url = "github:AvengeMedia/DankMaterialShell/stable";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
