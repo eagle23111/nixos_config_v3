@@ -1,7 +1,10 @@
-{pkgs, inputs,...}:
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   #TODO: move linux-only packages somewhere
-environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     which
     tree
     wget

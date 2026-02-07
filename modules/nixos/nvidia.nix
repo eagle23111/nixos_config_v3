@@ -4,8 +4,7 @@
   pkgs,
   inputs,
   ...
-}:
-{
+}: {
   # nix.settings = {
   #   substituters = [
   #     "https://cuda-maintainers.cachix.org"
@@ -33,9 +32,9 @@
     ];
   };
 
-  services.xserver.videoDrivers = [ "nvidia" ];
-  boot.kernelParams = [ "nvidia_drm.fbdev=1" ];
-  boot.kernelModules = [ "nvidia-uvm" ];
+  services.xserver.videoDrivers = ["nvidia"];
+  boot.kernelParams = ["nvidia_drm.fbdev=1"];
+  boot.kernelModules = ["nvidia-uvm"];
   environment.systemPackages = with pkgs; [
     libva-utils
     vdpauinfo

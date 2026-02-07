@@ -1,4 +1,7 @@
-{pkgs, inputs,...}:
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.gamemode.enable = true;
 }

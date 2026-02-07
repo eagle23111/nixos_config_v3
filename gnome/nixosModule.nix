@@ -1,5 +1,8 @@
-{pkgs,inputs, ...}:
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   services.desktopManager.gnome.enable = true;
   services.displayManager.gdm.enable = true;
   environment.systemPackages = with pkgs; [
@@ -10,5 +13,5 @@
     unstable.rewaita
   ];
 
-  fonts.packages = with pkgs; [ nerd-fonts.terminess-ttf ];
+  fonts.packages = with pkgs; [nerd-fonts.terminess-ttf];
 }

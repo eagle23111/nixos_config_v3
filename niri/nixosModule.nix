@@ -1,0 +1,35 @@
+{
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
+    inputs.niri.nixosModules.niri
+    inputs.stylix.nixosModules.stylix
+  ];
+  nixpkgs.overlays = [inputs.niri.overlays.niri];
+
+  programs.thunar.enable = true;
+  programs.xfconf.enable = true;
+  programs.thunar.plugins = with pkgs.xfce; [
+    thunar-archive-plugin
+    thunar-volman
+  ];
+  services.gvfs.enable = true; # Mount, trash, and other functionalities
+  services.tumbler.enable = true; # Thumbnail support for images
+
+  networking.networkmanager.enable = true;
+  hardware.bluetooth.enable = true;
+  #services.power-profiles-daemon.enable or services.tuned.enable = true;
+  #services.upower.enable = true;
+  environment.systemPackages = with pkgs; [
+    inputs.noctalia.packages.${system}.default
+    xwayland-satellite
+    playerctl
+  ];
+
+  programs.niri = {
+    enable = true;
+    package = pkgs.niri-stable;
+  };
+}

@@ -10,7 +10,7 @@
     # inputs.nix-colors.homeManagerModules.default
 
     inputs.self.homeManagerModules.zsh
-    inputs.self.gnome.homeManagerModule
+    inputs.self.niri.homeManagerModule
     #inputs.self.niriDotfiles.homeManagerModule
   ];
 
@@ -39,10 +39,10 @@
     homeDirectory = "/home/mortal";
   };
 
-    home.packages = with pkgs; [
-    steam 
-    #protonup-qt 
-    gamemode 
+  home.packages = with pkgs; [
+    steam
+    #protonup-qt
+    gamemode
     gamescope
     prismlauncher
     inputs.zen-browser.packages.${system}.default
@@ -65,6 +65,7 @@
     unstable.hydrus
 
     evolution
+    kitty
   ];
   programs.lutris = {
     enable = true;
@@ -73,16 +74,14 @@
   programs.home-manager.enable = true;
   programs.git = {
     enable = true;
-    lfs.enable = true; # for huggingface 
+    lfs.enable = true; # for huggingface
     settings = {
       user = {
         name = "eagle23111";
         email = "stasapohta@yandex.ru";
       };
-
     };
   };
-
 
   systemd.user.startServices = "sd-switch";
 

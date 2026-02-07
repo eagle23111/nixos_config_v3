@@ -1,14 +1,16 @@
-{ config, pkgs, inputs, ... }:
-
-let
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}: let
   http_proxy = "http://192.168.0.50:3128";
-  
+
   nrsAlias =
     if config.programs.nh.enable
     then "nh os switch .#NixosSystem.desktop"
     else "sudo nixos-rebuild switch --flake .#desktop";
-in
-{
+in {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -17,10 +19,9 @@ in
     oh-my-zsh = {
       enable = true;
       theme = "robbyrussell";
-      plugins = [ "git" ];
+      plugins = ["git"];
     };
   };
-
 
   home.shellAliases = {
     proxyrun = "HTTP_PROXY=${http_proxy} http_proxy=${http_proxy} HTTPS_PROXY=${http_proxy} https_proxy=${http_proxy}";

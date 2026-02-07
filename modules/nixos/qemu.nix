@@ -1,5 +1,9 @@
-{ config, inputs, pkgs, ... }:
 {
+  config,
+  inputs,
+  pkgs,
+  ...
+}: {
   virtualisation.libvirtd = {
     enable = true;
     qemu = {
@@ -14,6 +18,6 @@
     usbredir
 
     inputs.winapps.packages."${system}".winapps
-    inputs.winapps.packages."${system}".winapps-launcher 
+    inputs.winapps.packages."${system}".winapps-launcher
   ];
 }

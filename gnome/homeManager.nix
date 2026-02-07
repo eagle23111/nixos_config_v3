@@ -1,8 +1,8 @@
-{pkgs, inputs, ...}:
 {
-dconf.settings = {
-
-
-  
-};
+  pkgs,
+  inputs,
+  ...
+}: {
+  dconf.settings = {
+  };
 }

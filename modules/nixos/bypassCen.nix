@@ -1,5 +1,8 @@
-{pkgs, inputs, ...}:
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   services.zapret = {
     enable = true;
     package = pkgs.unstable.zapret;
@@ -29,11 +32,9 @@
       "--dpi-desync-fake-tls=${pkgs.unstable.zapret}/usr/share/zapret/files/fake/tls_clienthello_max_ru.bin"
     ];
     blacklist = [
-        "qwen.ai"
-        "aliyuncs.com"
-      ];
-
+      "qwen.ai"
+      "aliyuncs.com"
+    ];
   };
   services.cloudflare-warp.enable = true;
-
 }

@@ -1,5 +1,10 @@
-{ config, lib, pkgs, inputs, ... }:
 {
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     # Core system and compression
@@ -19,7 +24,7 @@
     systemd
 
     # Graphics and display (your originals + expansions)
-    config.hardware.graphics.package  # mesa/nvidia
+    config.hardware.graphics.package # mesa/nvidia
     glib
     zlib
     libgccjit

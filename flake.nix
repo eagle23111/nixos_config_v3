@@ -23,6 +23,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    stylix = {
+      url = "github:nix-community/stylix/release-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -59,6 +72,7 @@
     homeManagerModules = import ./modules/home-manager;
 
     gnome = import ./gnome;
+    niri = import ./niri;
 
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
@@ -72,13 +86,13 @@
     # 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
       "mortal@desktop" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; # TODO: kill it with fire 
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; # TODO: kill it with fire
         extraSpecialArgs = {inherit inputs;};
         modules = [
           ./home-manager/home.nix
         ];
       };
     };
-    home-manager.backupFileExtension= "backup"; 
+    home-manager.backupFileExtension = "backup";
   };
 }

@@ -14,7 +14,8 @@
     inputs.self.nixosModules.bypassCen
     inputs.hardware.nixosModules.common-cpu-amd
 
-    inputs.self.gnome.nixosModule
+    #inputs.self.gnome.nixosModule
+    inputs.self.niri.nixosModule
 
     ./hardware-configuration.nix
     ./boot.nix
@@ -59,16 +60,21 @@
   };
 
   # TODO: probably move it somewhere else
-  fonts.packages = with pkgs; [ nerd-fonts.terminess-ttf ];
-  services.flatpak.enable = true;
+  fonts.packages = with pkgs; [nerd-fonts.terminess-ttf pkgs.terminus_font];
+  #services.flatpak.enable = true;
 
   services.pipewire = {
-     enable = true;
-     pulse.enable = true;
-   };
+    enable = true;
+    pulse.enable = true;
+  };
   i18n.defaultLocale = "ru_RU.UTF-8";
-  i18n.supportedLocales = [ "ru_RU.UTF-8/UTF-8" "en_US.UTF-8/UTF-8" ];
-  console.useXkbConfig = true;
+  i18n.extraLocales = ["ru_RU.UTF-8/UTF-8" "en_US.UTF-8/UTF-8"];
+  console = {
+    useXkbConfig = true;
+    earlySetup = true;
+    font = "cyr-sun16";
+    packages = [pkgs.powerline-fonts];
+  };
 
   services.xserver.xkb.layout = "us,ru";
   services.xserver.xkb.options = "grp:alt_shift_toggle";
@@ -84,11 +90,11 @@
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
 
-    environment.variables = {
-      PATH = builtins.getEnv "PATH" + ":~/.local/bin";
-      # Example for ~/.local/bin (ensure it gets added at system boot)
-      # environment.localBinInPath = true; # There may be a dedicated option for this
-    };
+  environment.variables = {
+    PATH = builtins.getEnv "PATH" + ":~/.local/bin";
+    # Example for ~/.local/bin (ensure it gets added at system boot)
+    # environment.localBinInPath = true; # There may be a dedicated option for this
+  };
 
   services.openssh = {
     enable = true;
@@ -96,11 +102,11 @@
       PermitRootLogin = "no";
     };
   };
-    programs.nh = {
-      enable = true;
-      clean.enable = true;
-      clean.extraArgs = "--keep-since 4d --keep 3";
-      flake = "/home/mortal/nixosRelated/nixos-flake-current"; # sets NH_OS_FLAKE variable for you
-    };
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+    flake = "/home/mortal/nixosRelated/nixos-flake-current"; # sets NH_OS_FLAKE variable for you
+  };
   system.stateVersion = "25.11";
 }
