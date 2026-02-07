@@ -54,7 +54,7 @@
     # These are usually stuff you would upstream into home-manager
     homeManagerModules = import ./modules/home-manager;
 
-    devShells.x86_64-linux.default = import ./devshell_moveasap.nix {pkgs = nixpkgs.legacyPackages.x86_64-linux;};
+    gnome = import ./gnome;
 
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {

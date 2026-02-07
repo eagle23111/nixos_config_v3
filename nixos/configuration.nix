@@ -12,9 +12,9 @@
     inputs.self.nixosModules.qemu
     inputs.self.nixosModules.gaming
     inputs.self.nixosModules.bypassCen
-
     inputs.hardware.nixosModules.common-cpu-amd
-    # inputs.hardware.nixosModules.common-ssd
+
+    inputs.self.gnome.nixosModule
 
     ./hardware-configuration.nix
     ./boot.nix
@@ -57,17 +57,9 @@
     registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
   };
-  # TODO: set a proper desktop shell
-  services.desktopManager.gnome.enable = true;
-  services.displayManager.gdm.enable = true;
-  environment.systemPackages = [
-    pkgs.vanilla-dmz
-  ];
 
   # TODO: probably move it somewhere else
   fonts.packages = with pkgs; [ nerd-fonts.terminess-ttf ];
-
-  
 
   services.pipewire = {
      enable = true;
