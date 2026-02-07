@@ -1,1 +1,8 @@
-{}:{}
+{pkgs, inputs, ...}:
+{
+dconf.settings = {
+
+
+  
+};
+}

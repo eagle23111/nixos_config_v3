@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 {
   virtualisation.libvirtd = {
     enable = true;
@@ -12,5 +12,8 @@
   environment.systemPackages = with pkgs; [
     virt-manager
     usbredir
+
+    inputs.winapps.packages."${system}".winapps
+    inputs.winapps.packages."${system}".winapps-launcher 
   ];
 }

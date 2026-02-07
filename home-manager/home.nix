@@ -10,6 +10,7 @@
     # inputs.nix-colors.homeManagerModules.default
 
     inputs.self.homeManagerModules.zsh
+    inputs.self.gnome.homeManagerModule
     #inputs.self.niriDotfiles.homeManagerModule
   ];
 
@@ -48,7 +49,6 @@
     wineWowPackages.stable
     winetricks
     vscode
-    kitty
 
     tor
     tor-browser
@@ -59,10 +59,12 @@
     openssl
 
     llama-cpp
-    #lmstudio
+    lmstudio
     inputs.nvchad4nix.packages.${system}.default
 
     unstable.hydrus
+
+    evolution
   ];
   programs.lutris = {
     enable = true;
@@ -71,7 +73,7 @@
   programs.home-manager.enable = true;
   programs.git = {
     enable = true;
-    lfs.enable = true; # for huggingface models
+    lfs.enable = true; # for huggingface 
     settings = {
       user = {
         name = "eagle23111";

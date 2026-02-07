@@ -7,7 +7,7 @@
     numix-icon-theme
     numix-icon-theme-circle
     gnome-tweaks
-    rewaita
+    unstable.rewaita
   ];
 
   fonts.packages = with pkgs; [ nerd-fonts.terminess-ttf ];

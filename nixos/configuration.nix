@@ -60,6 +60,7 @@
 
   # TODO: probably move it somewhere else
   fonts.packages = with pkgs; [ nerd-fonts.terminess-ttf ];
+  services.flatpak.enable = true;
 
   services.pipewire = {
      enable = true;
@@ -77,11 +78,17 @@
   users.users = {
     mortal = {
       isNormalUser = true;
-      extraGroups = ["wheel" "gamemode"];
+      extraGroups = ["wheel" "gamemode" "libvirtd" "kvm"];
     };
   };
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
+
+    environment.variables = {
+      PATH = builtins.getEnv "PATH" + ":~/.local/bin";
+      # Example for ~/.local/bin (ensure it gets added at system boot)
+      # environment.localBinInPath = true; # There may be a dedicated option for this
+    };
 
   services.openssh = {
     enable = true;
@@ -89,6 +96,11 @@
       PermitRootLogin = "no";
     };
   };
-
+    programs.nh = {
+      enable = true;
+      clean.enable = true;
+      clean.extraArgs = "--keep-since 4d --keep 3";
+      flake = "/home/mortal/nixosRelated/nixos-flake-current"; # sets NH_OS_FLAKE variable for you
+    };
   system.stateVersion = "25.11";
 }
