@@ -4,7 +4,8 @@
   services.displayManager.gdm.enable = true;
   environment.systemPackages = with pkgs; [
     vanilla-dmz
-    numix-circle
+    numix-icon-theme
+    numix-icon-theme-circle
     gnome-tweaks
     rewaita
   ];
