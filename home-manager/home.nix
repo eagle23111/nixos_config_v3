@@ -72,6 +72,7 @@
   };
 
   programs.home-manager.enable = true;
+  services.gnome-keyring.enable = true;
   programs.git = {
     enable = true;
     lfs.enable = true; # for huggingface

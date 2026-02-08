@@ -80,7 +80,7 @@
   services.xserver.xkb.options = "grp:alt_shift_toggle";
   networking.hostName = "nixos";
   time.timeZone = "Europe/Moscow";
-
+  security.pam.services.gdm.enableGnomeKeyring = true;
   users.users = {
     mortal = {
       isNormalUser = true;

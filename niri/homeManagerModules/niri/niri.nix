@@ -41,8 +41,6 @@
         };
       };
 
-
-
       layer-rules = [
         {
           matches = [
@@ -54,20 +52,19 @@
         }
       ];
 
-        window-rules = [
-          {
+      window-rules = [
+        {
           geometry-corner-radius = {
             bottom-right = 12.0;
             bottom-left = 12.0;
             top-right = 12.0;
             top-left = 12.0;
-            };
+          };
           clip-to-geometry = true;
         }
-        ];
+      ];
 
-        layout.border.width = 3;
-
+      layout.border.width = 3;
     };
   };
 }

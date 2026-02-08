@@ -14,6 +14,7 @@
   programs.thunar.plugins = with pkgs.xfce; [
     thunar-archive-plugin
     thunar-volman
+    thunar-media-tags-plugin
   ];
   services.gvfs.enable = true; # Mount, trash, and other functionalities
   services.tumbler.enable = true; # Thumbnail support for images
@@ -26,6 +27,7 @@
     inputs.noctalia.packages.${system}.default
     xwayland-satellite
     playerctl
+    file-roller
   ];
 
   programs.niri = {

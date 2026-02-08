@@ -57,18 +57,20 @@
         };
       };
       #colorSchemes.predefinedScheme = "Monochrome";
-      /*general = {
+      /*
+        general = {
         avatarImage = "/home/drfoobar/.face";
         radiusRatio = 0.2;
-      };*/
+      };
+      */
       wallpaper.overviewEnabled = true;
       location = {
         monthBeforeDay = true;
         name = "Voronezh, Russia";
       };
     };
-    
-      plugins = {
+
+    plugins = {
       sources = [
         {
           enabled = true;
@@ -91,9 +93,6 @@
         hideBackground = true;
       };
     };
-
-
-  
 
     # this may also be a string or a path to a JSON file.
   };
