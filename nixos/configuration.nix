@@ -12,7 +12,10 @@
     inputs.self.nixosModules.qemu
     inputs.self.nixosModules.gaming
     inputs.self.nixosModules.bypassCen
+    inputs.self.nixosModules.snapper
+
     inputs.hardware.nixosModules.common-cpu-amd
+
 
     #inputs.self.gnome.nixosModule
     inputs.self.niri.nixosModule
