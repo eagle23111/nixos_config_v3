@@ -6,4 +6,5 @@
   gaming = import ./gaming.nix;
   bypassCen = import ./bypassCen.nix;
   snapper = import ./snapper.nix;
+  chromium = import ./chromium.nix;
 }

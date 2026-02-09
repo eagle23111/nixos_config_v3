@@ -29,6 +29,7 @@
     fastfetch
     inputs.home-manager.packages.${pkgs.system}.default
     wireshark
+    nil
   ];
   programs.wireshark.enable = true;
 

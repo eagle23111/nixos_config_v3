@@ -13,6 +13,7 @@
     inputs.self.nixosModules.gaming
     inputs.self.nixosModules.bypassCen
     inputs.self.nixosModules.snapper
+    inputs.self.nixosModules.chromium
 
     inputs.hardware.nixosModules.common-cpu-amd
 
@@ -61,6 +62,8 @@
     registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
   };
+
+  boot.kernelPackages = pkgs.unstable.linuxPackages_latest;
 
   # TODO: probably move it somewhere else
   fonts.packages = with pkgs; [nerd-fonts.terminess-ttf pkgs.terminus_font];

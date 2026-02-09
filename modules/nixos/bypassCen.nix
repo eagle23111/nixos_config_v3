@@ -32,6 +32,7 @@
     blacklist = [
       "qwen.ai"
       "aliyuncs.com"
+      "archlinux.org"
     ];
   };
   services.cloudflare-warp.enable = true;
