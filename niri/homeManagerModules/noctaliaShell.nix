@@ -44,6 +44,9 @@
               id = "Network";
             }
             {
+              id = "Network";
+            }
+            {
               id = "Volume";
             }
             {
@@ -59,7 +62,7 @@
       #colorSchemes.predefinedScheme = "Monochrome";
       /*
         general = {
-        avatarImage = "/home/drfoobar/.face";
+        avatarImage = "${config.home.homeDirectory}/.face";
         radiusRatio = 0.2;
       };
       */

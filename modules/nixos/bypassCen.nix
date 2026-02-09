@@ -23,12 +23,10 @@
       "--dpi-desync-repeats=10"
       "--dpi-desync-fake-quic=${pkgs.unstable.zapret}/usr/share/zapret/files/fake/quic_initial_www_google_com.bin"
       "--new"
-      "--filter-tcp=80,443"
-      "--dpi-desync=fake,multisplit"
-      "--dpi-desync-split-seqovl=664"
-      "--dpi-desync-split-pos=1"
+      "--filter-tcp=80,443,6900-6999"
+      "--dpi-desync=fake"
       "--dpi-desync-fooling=ts"
-      "--dpi-desync-repeats=8"
+      "--dpi-desync-repeats=6"
       "--dpi-desync-fake-tls=${pkgs.unstable.zapret}/usr/share/zapret/files/fake/tls_clienthello_max_ru.bin"
     ];
     blacklist = [

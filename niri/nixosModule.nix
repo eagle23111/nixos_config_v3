@@ -15,6 +15,7 @@
     thunar-archive-plugin
     thunar-volman
     thunar-media-tags-plugin
+    thunar-vcs-plugin
   ];
   services.gvfs.enable = true; # Mount, trash, and other functionalities
   services.tumbler.enable = true; # Thumbnail support for images
@@ -28,6 +29,7 @@
     xwayland-satellite
     playerctl
     file-roller
+    mate.mate-polkit
   ];
 
   programs.niri = {

@@ -84,7 +84,7 @@
   users.users = {
     mortal = {
       isNormalUser = true;
-      extraGroups = ["wheel" "gamemode" "libvirtd" "kvm"];
+      extraGroups = ["wheel" "gamemode" "libvirtd" "kvm" "wireshark"];
     };
   };
   users.defaultUserShell = pkgs.zsh;

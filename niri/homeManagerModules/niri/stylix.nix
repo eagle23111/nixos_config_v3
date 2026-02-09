@@ -15,6 +15,7 @@
   stylix.targets.qt.enable = true;
   stylix.targets.niri.enable = true;
   stylix.targets.vscode.enable = true;
+  stylix.targets.zen-browser.enable = true;
 
   stylix.fonts = {
     serif = {

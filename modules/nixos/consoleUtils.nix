@@ -28,7 +28,9 @@
     aria2
     fastfetch
     inputs.home-manager.packages.${pkgs.system}.default
+    wireshark
   ];
+  programs.wireshark.enable = true;
 
   programs.git.enable = true;
 }
