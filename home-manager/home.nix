@@ -72,15 +72,14 @@
   programs.lutris = {
     enable = true;
   };
-
+  programs.chromium.enable = true;
   programs.kitty = {
-  enable = true;
-  extraConfig = ''
+    enable = true;
+    extraConfig = ''
       copy_on_select yes
       mouse_map right press ungrabbed,grabbed paste_from_selection
     '';
   };
-
 
   programs.home-manager.enable = true;
   services.gnome-keyring.enable = true;

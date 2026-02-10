@@ -32,8 +32,12 @@
     playerctl
     file-roller
     mate.mate-polkit
+    ddcutil
   ];
+  hardware.i2c.enable = true;
+  boot.kernelModules = ["i2c-dev"]; # monitor lights
 
+  programs.light.enable = true;
   programs.niri = {
     enable = true;
     package = pkgs.niri-stable;

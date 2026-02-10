@@ -27,7 +27,6 @@
       egl-wayland
       wgpu-utils
       libglvnd
-      mesa
       libGL
     ];
   };
@@ -45,7 +44,6 @@
     egl-wayland
     wgpu-utils
     libglvnd
-    mesa
     nvtopPackages.full
     libGL
     cudaPackages.cudatoolkit

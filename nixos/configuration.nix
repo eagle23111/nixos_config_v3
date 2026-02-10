@@ -17,7 +17,6 @@
 
     inputs.hardware.nixosModules.common-cpu-amd
 
-
     #inputs.self.gnome.nixosModule
     inputs.self.niri.nixosModule
 
@@ -81,7 +80,6 @@
     font = "cyr-sun16";
     packages = [pkgs.powerline-fonts];
   };
-
   services.xserver.xkb.layout = "us,ru";
   services.xserver.xkb.options = "grp:alt_shift_toggle";
   networking.hostName = "nixos";
@@ -90,7 +88,7 @@
   users.users = {
     mortal = {
       isNormalUser = true;
-      extraGroups = ["wheel" "gamemode" "libvirtd" "kvm" "wireshark"];
+      extraGroups = ["wheel" "gamemode" "libvirtd" "kvm" "wireshark" "video" "i2c"];
     };
   };
   users.defaultUserShell = pkgs.zsh;

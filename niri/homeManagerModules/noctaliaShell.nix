@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  config,
   ...
 }: {
   imports = [
@@ -44,7 +45,7 @@
               id = "Network";
             }
             {
-              id = "Network";
+              id = "Brightness";
             }
             {
               id = "Volume";
@@ -60,43 +61,47 @@
         };
       };
       #colorSchemes.predefinedScheme = "Monochrome";
-      /*
-        general = {
-        avatarImage = "${config.home.homeDirectory}/.face";
-        radiusRatio = 0.2;
-      };
-      */
+      #general = {
+      #  avatarImage = "${config. .homeDirectory}/.face";
+      #  radiusRatio = 0.2;
+      #};
       wallpaper.overviewEnabled = true;
       location = {
         monthBeforeDay = true;
         name = "Voronezh, Russia";
       };
-    };
+      brightness = {
+        enableDdcSupport = true;
+      };
+      /*
+        plugins = {
+        sources = [
+          {
+            enabled = true;
+            name = "Official Noctalia Plugins";
+            url = "https://github.com/noctalia-dev/noctalia-plugins";
+          }
+        ];
+        states = {
+          catwalk = {
+            enabled = true;
+            sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+          };
+        };
+        version = 1;
+      };
+      */
 
-    plugins = {
-      sources = [
-        {
-          enabled = true;
-          name = "Official Noctalia Plugins";
-          url = "https://github.com/noctalia-dev/noctalia-plugins";
-        }
-      ];
-      states = {
+      /*
+        pluginSettings = {
         catwalk = {
-          enabled = true;
-          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+          minimumThreshold = 25;
+          hideBackground = true;
         };
       };
-      version = 1;
-    };
+      */
 
-    pluginSettings = {
-      catwalk = {
-        minimumThreshold = 25;
-        hideBackground = true;
-      };
+      # this may also be a string or a path to a JSON file.
     };
-
-    # this may also be a string or a path to a JSON file.
   };
 }

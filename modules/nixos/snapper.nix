@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   services.snapper = {
     #enable = true;
     #configFilePermissions = {
@@ -14,8 +12,8 @@
         QGROUP = "";
         SPACE_LIMIT = "0.5";
         FREE_LIMIT = "0.2";
-        ALLOW_USERS = [ ];
-        ALLOW_GROUPS = [ ];
+        ALLOW_USERS = [];
+        ALLOW_GROUPS = [];
         SYNC_ACL = "no";
         BACKGROUND_COMPARISON = true;
         NUMBER_CLEANUP = true;
@@ -41,8 +39,8 @@
         QGROUP = "";
         SPACE_LIMIT = "0.5";
         FREE_LIMIT = "0.2";
-        ALLOW_USERS = [ ];
-        ALLOW_GROUPS = [ ];
+        ALLOW_USERS = [];
+        ALLOW_GROUPS = [];
         SYNC_ACL = "no";
         BACKGROUND_COMPARISON = true;
         NUMBER_CLEANUP = true;
