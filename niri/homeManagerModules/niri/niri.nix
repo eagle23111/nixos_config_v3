@@ -11,6 +11,7 @@
 
   home.packages = with pkgs; [
     xwayland-satellite
+    swayimg
   ];
 
   nixpkgs.overlays = [inputs.niri.overlays.niri];
