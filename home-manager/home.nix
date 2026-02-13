@@ -68,6 +68,7 @@
 
     ani-cli
     mpv
+    devenv
   ];
   programs.lutris = {
     enable = true;

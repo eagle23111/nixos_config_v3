@@ -18,6 +18,7 @@
   programs.niri = {
     package = pkgs.niri-stable;
     settings = {
+      prefer-no-csd = true;
       spawn-at-startup = [
         {
           command = [

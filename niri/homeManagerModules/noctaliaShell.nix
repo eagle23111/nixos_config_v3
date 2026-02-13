@@ -16,7 +16,7 @@
       bar = {
         density = "default";
         position = "right";
-        showCapsule = false;
+        showCapsule = true;
         widgets = {
           left = [
             {

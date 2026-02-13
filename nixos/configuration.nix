@@ -24,6 +24,8 @@
     ./boot.nix
   ];
 
+  
+
   nixpkgs = {
     overlays = [
       inputs.self.overlays.additions
@@ -60,6 +62,7 @@
 
     registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
+    settings.trusted-users = ["root" "@wheel"];
   };
 
   boot.kernelPackages = pkgs.unstable.linuxPackages_latest;
@@ -94,10 +97,17 @@
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
 
+  networking.firewall = {
+    enable = true;
+    extraCommands = ''
+      # Allow ALL traffic from your local network
+      iptables -I INPUT 1 -s 192.168.0.0/16 -j ACCEPT
+      ip6tables -I INPUT 1 -s fd00::/8 -j ACCEPT
+      ip6tables -I INPUT 1 -s fe80::/10 -j ACCEPT
+    '';
+  };
   environment.variables = {
     PATH = builtins.getEnv "PATH" + ":~/.local/bin";
-    # Example for ~/.local/bin (ensure it gets added at system boot)
-    # environment.localBinInPath = true; # There may be a dedicated option for this
   };
 
   services.openssh = {
