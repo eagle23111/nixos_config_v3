@@ -3,8 +3,8 @@ let
     lockcommand = "noctalia-shell ipc call lockScreen lock";
 in {
 services.swayidle = {
-  enable = true;
-  package = pkgs.swayidle;  # Or pkgs.niri if adapted for compositor commands
+  enable = false;
+  package = pkgs.swayidle;   
 
   timeouts = [
     { timeout = 330; command = lockcommand; }

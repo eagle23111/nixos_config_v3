@@ -29,6 +29,9 @@
         {
           command = ["${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1"];
         }
+        {
+          command = ["swaylock"];
+        }
       ];
       binds = with inputs.niri.lib.niri.actions; import ./binds.nix;
       input = {

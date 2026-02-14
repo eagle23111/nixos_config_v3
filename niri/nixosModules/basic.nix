@@ -62,4 +62,6 @@
     XDG_SESSION_TYPE = "wayland";
     XDG_SESSION_DESKTOP = "niri";
   };
+
+  security.polkit.enable = true;
 }

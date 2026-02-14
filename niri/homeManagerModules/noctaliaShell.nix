@@ -11,7 +11,6 @@
   # configure options
   programs.noctalia-shell = {
     enable = true;
-
     settings = {
       bar = {
         density = "default";
