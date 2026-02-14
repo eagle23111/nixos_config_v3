@@ -69,6 +69,7 @@
     ani-cli
     mpv
     devenv
+    firefox
   ];
   programs.lutris = {
     enable = true;

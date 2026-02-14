@@ -14,6 +14,7 @@
     inputs.self.nixosModules.bypassCen
     inputs.self.nixosModules.snapper
     inputs.self.nixosModules.chromium
+    inputs.self.nixosModules.caches
 
     inputs.hardware.nixosModules.common-cpu-amd
 
