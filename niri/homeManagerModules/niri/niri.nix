@@ -7,6 +7,7 @@
     inputs.niri.homeModules.niri
     #./gtkQt.nix
     ./stylix.nix
+    ./swayidle.nix
   ];
 
   home.packages = with pkgs; [
@@ -56,6 +57,8 @@
           place-within-backdrop = true;
         }
       ];
+
+
 
       window-rules = [
         {
