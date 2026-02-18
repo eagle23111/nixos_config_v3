@@ -62,6 +62,7 @@
 
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
+  nixpkgs.config.cudaSupport = true;
   hardware.nvidia-container-toolkit.enable = true;
   nixpkgs.overlays = [
     (self: super: {

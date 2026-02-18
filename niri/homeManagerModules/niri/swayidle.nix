@@ -2,6 +2,7 @@
 let 
     lockcommand = "noctalia-shell ipc call lockScreen lock";
 in {
+  #TODO: make it work
 services.swayidle = {
   enable = false;
   package = pkgs.swayidle;   
