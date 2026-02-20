@@ -4,13 +4,13 @@ let
 in {
   #TODO: make it work
 services.swayidle = {
-  enable = false;
+  enable = true;
   package = pkgs.swayidle;   
 
   timeouts = [
     { timeout = 330; command = lockcommand; }
     { timeout = 360; command = "niri msg action power-off-monitors";  
-      resumeCommand = "niri msg action monitors-on"; }
+      resumeCommand = "niri msg action power-on-monitors"; }
   ];
 
   events = [
